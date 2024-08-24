@@ -1,6 +1,6 @@
-import { Text, View, VirtualizedList } from "react-native";
+import { Text, View,  } from "react-native";
 import {styleIndex} from './styleIndex';
-import Popular from '../components/popular'
+import Popular from '../components/Popular'
 export default function Home() {
   return (
     <View

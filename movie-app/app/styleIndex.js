@@ -9,7 +9,7 @@ export const styleIndex = StyleSheet.create({
         flex:0.6,
         alignItems:'center',
         justifyContent:'center',
-        backgroundColor:'blue'
+        backgroundColor:'yellow',
     },
     inContainerDown:{
         flex:0.4,
