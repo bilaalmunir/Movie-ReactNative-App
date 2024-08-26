@@ -1,8 +1,8 @@
 import { Movie } from "@/types/interfaces";
 import { REACT_APP_API_KEY,REACT_APP_BASE_URL } from "@env";
 
-export const getPopularMovies = async(): Promise<Movie[]> => {
-const url: string =`${REACT_APP_BASE_URL}movie/popular?language=en-US&page=2&api_key=${REACT_APP_API_KEY}`
+export const getPopularMovies = async(pageNumber:Number): Promise<Movie[]> => {
+const url: string =`${REACT_APP_BASE_URL}movie/popular?language=en-US&page=${pageNumber}&api_key=${REACT_APP_API_KEY}`
 console.log(url)
 try {
     const response = await fetch(url);

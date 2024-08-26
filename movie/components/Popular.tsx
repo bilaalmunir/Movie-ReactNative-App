@@ -10,21 +10,33 @@ import { Movie } from "@/types/interfaces";
 
 export default function Popular () {
     const [data, setData] = useState<Movie[]>([]);
-  const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(true);
+    const [pageNumber, setPageNumber] = useState<number>(1);
+    const [isFetching, setIsFetching] = useState(false)
   
   useEffect(() => {
-    const fetchMovies = async () => {
-      const movies = await getPopularMovies();
-      setData(movies);
+    const fetchPopularMovies = async () => {
+        if (isFetching) return;
+        setIsFetching(true);
+      const movies = await getPopularMovies(pageNumber);
+
+      setData(prevData => [...prevData, ...movies]);
       setLoading(false);
+      setIsFetching(false);
     };
 
-    fetchMovies();
-  }, []);
+    fetchPopularMovies();
+  }, [pageNumber]);
+
+  function updatePageNumber(){
+    if(!isFetching){
+    setPageNumber(prevPageNumber => prevPageNumber+1)
+    }
+  }
   if (loading) {
     return (
       <View style={popularStyles.loaderContainer}>
-        <ActivityIndicator size="large" color="#0000ff" />
+        <ActivityIndicator size="large" color="#000000" />
       </View>
     );
   }
@@ -33,8 +45,11 @@ export default function Popular () {
    <View style={[popularStyles.parentView]}>
     <FlashList data={data}
      renderItem={({item}) => <PopularItem item={item}/>}
+     keyExtractor={(item) => item.id.toString()}
      estimatedItemSize={200}
      horizontal={true}
+     onEndReached={updatePageNumber}
+     onEndReachedThreshold={0.7}
     />
    </View>
   );
