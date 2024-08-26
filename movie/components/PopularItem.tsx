@@ -1,15 +1,14 @@
 import {View,useWindowDimensions,Text,StyleSheet} from 'react-native';
-import {API_KEY} from "@env"
 import { PopularItemProps } from '@/types/interfaces';
 
 
 
 const PopularItem: React.FC<PopularItemProps> = ({ item }) => {
-    console.log('it came here')
+    
     const {width} = useWindowDimensions();
   return (
     <View style={[itemStyles.parentView, {width}]} >
-    <Text style={[itemStyles.item, {width}]}> {API_KEY}{item.title}</Text>
+    <Text style={[itemStyles.item, {width}]}>{item.title}</Text>
     </View>
   )
 }
