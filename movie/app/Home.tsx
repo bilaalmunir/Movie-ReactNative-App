@@ -1,6 +1,8 @@
 import { Text, View } from "react-native";
 import Popular from "@/components/Popular";
 import { styleIndex } from "./styleIndex";
+import { SafeAreaView } from "react-native-safe-area-context";
+import SearchBar from "@/components/SeachBar";
 
 export default function Home() {
   return (
@@ -8,7 +10,7 @@ export default function Home() {
       style={styleIndex.container}
     >
       <View style={styleIndex.searchBarContainer}> 
-        <Text> Search bar</Text>
+        <SearchBar/>
       </View>
      <View style={styleIndex.inContainerUp}> 
       <Popular/> 

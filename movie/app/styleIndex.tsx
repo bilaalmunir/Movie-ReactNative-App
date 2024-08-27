@@ -3,11 +3,14 @@ import {StyleSheet} from 'react-native'
 export const styleIndex = StyleSheet.create({
     container: {
       flex:1,
-      backgroundColor:'yellow'
+      backgroundColor:'yellow',
+      
     },
     searchBarContainer: {
       flex:0.1,
-      backgroundColor:'blue'
+      backgroundColor:'brown',
+      justifyContent:'center'
+
     },
     inContainerUp:{
         flex:0.4,
