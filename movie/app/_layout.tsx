@@ -1,9 +1,17 @@
-import { Stack } from "expo-router";
+import React, { FC } from "react";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import Home from "@/app/Home"
+import Explore from "@/app/Explore";
 
-export default function RootLayout() {
+const Tab = createBottomTabNavigator();
+
+const RootLayout: FC = () => {
   return (
-    <Stack>
-      <Stack.Screen name="index" />
-    </Stack>
+    <Tab.Navigator>
+      <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen name="Explore" component={Explore} />
+    </Tab.Navigator>
   );
-}
+};
+
+export default RootLayout;

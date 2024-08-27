@@ -19,8 +19,8 @@ export default function Popular() {
             if (isFetching) return;
             setIsFetching(true);
             const movies = await getPopularMovies(pageNumber);
-
-            setData(prevData => [...prevData, ...movies]);
+            if (movies!=data){
+                setData(prevData => [...prevData, ...movies]);}
             setLoading(false);
             setIsFetching(false);
         };
