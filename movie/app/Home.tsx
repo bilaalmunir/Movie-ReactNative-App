@@ -1,8 +1,8 @@
 import { Text, View } from "react-native";
-import Popular from "@/components/Popular";
+import Popular from "@/components/home-page-components/Popular";
 import { styleIndex } from "./styleIndex";
 import { SafeAreaView } from "react-native-safe-area-context";
-import SearchBar from "@/components/SeachBar";
+import SearchBar from "@/components/home-page-components/SeachBar";
 
 export default function Home() {
   return (

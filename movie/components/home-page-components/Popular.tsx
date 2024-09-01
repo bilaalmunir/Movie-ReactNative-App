@@ -1,7 +1,7 @@
 import { Text, StyleSheet, useWindowDimensions, ActivityIndicator } from "react-native";
 import { FlashList } from "@shopify/flash-list";
 import { View } from "react-native";
-import PopularItem from '@/components/PopularItem'
+import PopularItem from '@/components/home-page-components/PopularItem'
 import { getPopularMovies } from "@/API/getApi";
 import { useState, useEffect } from "react";
 import { Movie } from "@/types/interfaces";
@@ -13,6 +13,7 @@ export default function Popular() {
     const [loading, setLoading] = useState(true);
     const [pageNumber, setPageNumber] = useState<number>(1);
     const [isFetching, setIsFetching] = useState(false)
+    
 
     useEffect(() => {
         const fetchPopularMovies = async () => {
