@@ -20,8 +20,10 @@ export default function Popular() {
             if (isFetching) return;
             setIsFetching(true);
             const movies = await getPopularMovies(pageNumber);
-            if (movies!=data){
-                setData(prevData => [...prevData, ...movies]);}
+            setData(prevData => {
+                const newMovies = movies.filter(movie => !prevData.some(m => m.id === movie.id));
+                return [...prevData, ...newMovies];
+            });
             setLoading(false);
             setIsFetching(false);
         };
