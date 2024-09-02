@@ -66,8 +66,12 @@ const popularStyles = StyleSheet.create({
 
     titleView: {
         flex: 0.2,
-        backgroundColor: 'orange',
-        alignSelf:'flex-start'
+        width:'100%',
+        backgroundColor: '#A3B7F6',
+        alignSelf:'flex-start',
+        borderRadius:10,
+        padding:5
+
     },
     parentItemView: {
         flex: 0.8,
