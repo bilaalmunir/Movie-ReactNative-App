@@ -3,6 +3,7 @@ import {StyleSheet} from 'react-native'
 export const styleIndex = StyleSheet.create({
     container: {
       flex:1,
+      gap:5,
       backgroundColor:'#240A34',
       
     },

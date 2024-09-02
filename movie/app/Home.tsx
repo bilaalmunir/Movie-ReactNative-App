@@ -6,7 +6,7 @@ import SearchBar from "@/components/home-page-components/SeachBar";
 
 export default function Home() {
   return (
-    <View
+    <SafeAreaView
       style={styleIndex.container}
     >
       <View style={styleIndex.searchBarContainer}> 
@@ -18,6 +18,6 @@ export default function Home() {
      <View style={styleIndex.inContainerDown}>
       <Text>bottom</Text>
      </View>
-    </View>
+    </SafeAreaView>
   );
 }

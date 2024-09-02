@@ -22,7 +22,8 @@ const searchBarStyle = StyleSheet.create({
     searchBarParentView:{
         flex:1,
         backgroundColor:'#A3B7F6',
-        justifyContent:'center'
+        justifyContent:'center',
+        borderRadius:10
     },
     input: {
         height: 40,

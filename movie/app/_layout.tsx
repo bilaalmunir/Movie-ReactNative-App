@@ -8,7 +8,7 @@ const Tab = createBottomTabNavigator();
 const RootLayout: FC = () => {
   return (
     <Tab.Navigator>
-      <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen name="Home" component={Home} options={{headerShown:false}} />
       <Tab.Screen name="Explore" component={Explore} />
     </Tab.Navigator>
   );
